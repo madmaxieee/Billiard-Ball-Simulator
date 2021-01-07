@@ -1,7 +1,7 @@
 from vpython import *
 from Table import p_length, p_width
 
-e = 0.98 # coefficient of restitution
+e = 0.98  # coefficient of restitution
 
 ball_radius = 2.25 / 2  # ball radius
 m = 0.17  # unit: kg
@@ -14,17 +14,17 @@ for i in range(1, 8):
 
 
 def collision1(ball1, ball2):
-	v1x = (ball1.pos - ball2.pos) * dot(ball1.v , ball1.pos - ball2.pos) / mag(ball1.pos - ball2.pos) ** 2
-	v2x = (ball2.pos - ball1.pos) * dot(ball2.v , ball2.pos - ball1.pos) / mag(ball2.pos - ball1.pos) ** 2
+	v1x = (ball1.pos - ball2.pos) * dot(ball1.v, ball1.pos - ball2.pos) / mag(ball1.pos - ball2.pos) ** 2
+	v2x = (ball2.pos - ball1.pos) * dot(ball2.v, ball2.pos - ball1.pos) / mag(ball2.pos - ball1.pos) ** 2
 	# v1prime = ball1.v - 2 * m / (m + m) * (ball1.pos - ball2.pos) * \
 	#           dot(ball1.v - ball2.v, ball1.pos - ball2.pos) / mag(ball1.pos - ball2.pos) ** 2
-	v1prime = ball1.v - v1x + ((1+e)*(m*v1x+m*v2x)/(m+m)-e*v1x)
+	v1prime = ball1.v - v1x + ((1 + e) * (m * v1x + m * v2x) / (m + m) - e * v1x)
 	# v2prime = ball2.v - 2 * m / (m + m) * (ball2.pos - ball1.pos) * \
 	#           dot(ball2.v - ball1.v, ball2.pos - ball1.pos) / mag(ball2.pos - ball1.pos) ** 2
 	v2prime = ball2.v - v2x + ((1 + e) * (m * v2x + m * v1x) / (m + m) - e * v2x)
 
-	#return sqrt(1 - energy_loss1) * v1prime, sqrt(1 - energy_loss1) * v2prime
-	return v1prime,v2prime
+	# return sqrt(1 - energy_loss1) * v1prime, sqrt(1 - energy_loss1) * v2prime
+	return v1prime, v2prime
 
 
 class BilliardBall(sphere):
@@ -60,4 +60,4 @@ def incidence_angle(theta, ball1, ball2):
 		return 0
 	d = mag(ball1.pos - ball2.pos)
 	temp = (d - 2 * ball_radius * cos(theta)) / sqrt(d ** 2 + 4 * ball_radius ** 2 - 4 * d * ball_radius * cos(theta))
-	return  theta / abs(theta) * acos(temp)
+	return theta / abs(theta) * acos(temp)
