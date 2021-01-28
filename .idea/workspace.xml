@@ -10,6 +10,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/zhuang-jia-xu/Billiard-Ball-Simulator" />
+      </set>
+    </option>
+  </component>
   <component name="ProjectId" id="1mkYV0Vw4r1on35fWN9hAqDyFGM" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -30,5 +37,11 @@
       <updated>1610039076275</updated>
     </task>
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="740" y="262" key="FileChooserDialogImpl" timestamp="1611561133692">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="262" key="FileChooserDialogImpl/-1920.0.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1611561133692" />
   </component>
 </project>
